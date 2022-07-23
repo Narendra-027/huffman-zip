@@ -16,6 +16,7 @@ void zip :: createNodeArr(){
 void zip :: traverseTree(Node *root, string code){
     if(root->left == NULL && root->left == NULL){
         root->code = code;
+        return;
     }
 
     traverseTree(root->left, code + '0');
@@ -51,7 +52,6 @@ string zip :: decToBin(int decNum){
 
 void zip :: createMinHeap(){
     char chr;
-    std :: cout << "opened" << endl;
     inFile.open(inFileName, ios :: in);
     inFile.get(chr);
 
@@ -249,14 +249,10 @@ void zip :: makeTree(){
 }
 
 void zip :: compress(){
-    std :: cout << "done1" << endl;
     createMinHeap();
     createTree();
-    std :: cout << "done2" << endl;
     createCodes();
-    std :: cout << "done3" << endl;
     createZip();
-    std :: cout << "done4" << endl;
 }
 
 void zip :: extract(){
