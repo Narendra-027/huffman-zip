@@ -2,14 +2,13 @@
 #include"zip.hpp"
 using namespace std;
 
-int main(int argc, char* argv[]){
-    cout << "done" << endl;
-    if (argc != 3) {
-        cout << "Failed to detect Files";
-		exit(1);
-	}
-    cout << "done" << endl;
-    zip objZip(argv[1], argv[2]);
+
+int main(){
+    string inputFileName, outputFileName;
+    cin >> inputFileName;
+    cin >> outputFileName;
+    
+    zip objZip(inputFileName, outputFileName);
     objZip.compress();
 
     cout << "Compressed successfully" << endl;
